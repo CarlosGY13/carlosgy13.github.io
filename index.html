@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carlos Alberto Granados Ybarra - Ingeniero Electrónico</title>
-    <meta name="description" content="Ingeniero Electrónico especializado en IA, Cloud e Interacción Humano-Robot">
+    <title>Carlos Alberto Granados Ybarra</title>
+    <meta name="description" content="Electronic Engineer specialized in AI, HRI and Research">
     <link rel="icon" type="image/x-icon" href="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjMyIiBoZWlnaHQ9IjMyIiByeD0iMTYiIGZpbGw9IiMzQjgyRjYiLz4KPHRleHQgeD0iNTAlIiB5PSI2MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxNiIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IndoaXRlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkb21pbmFudC1iYXNlbGluZT0ibWlkZGxlIj5DRzwvdGV4dD4KPC9zdmc+">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
@@ -19,7 +19,6 @@
                     animation: {
                         'fade-in': 'fadeIn 0.5s ease-in-out',
                         'slide-up': 'slideUp 0.5s ease-out',
-                        'bounce-light': 'bounceLight 2s infinite',
                     },
                     keyframes: {
                         fadeIn: {
@@ -29,11 +28,6 @@
                         slideUp: {
                             '0%': { transform: 'translateY(20px)', opacity: '0' },
                             '100%': { transform: 'translateY(0)', opacity: '1' },
-                        },
-                        bounceLight: {
-                            '0%, 20%, 50%, 80%, 100%': { transform: 'translateY(0)' },
-                            '40%': { transform: 'translateY(-10px)' },
-                            '60%': { transform: 'translateY(-5px)' },
                         }
                     }
                 }
@@ -41,536 +35,612 @@
             darkMode: 'class'
         }
     </script>
+    <style>
+        .research-item, .project-item {
+            border-left: 3px solid #e5e7eb;
+            transition: all 0.3s ease;
+        }
+        .research-item:hover, .project-item:hover {
+            border-left-color: #3b82f6;
+            transform: translateX(5px);
+        }
+        .critical-project {
+            border-left-color: #dc2626;
+        }
+        .critical-project:hover {
+            border-left-color: #dc2626;
+            box-shadow: 0 4px 20px rgba(220, 38, 38, 0.1);
+        }
+    </style>
 </head>
-<body class="font-inter bg-white dark:bg-gray-900 transition-colors duration-300">
-    <!-- Theme Toggle Button -->
-    <button id="theme-toggle" class="fixed top-4 right-4 z-50 p-3 bg-blue-600 dark:bg-blue-500 text-white rounded-full shadow-lg hover:bg-blue-700 dark:hover:bg-blue-600 transition-all duration-300">
-        <i class="fas fa-moon dark:hidden"></i>
-        <i class="fas fa-sun hidden dark:inline"></i>
+<body class="font-inter bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 leading-relaxed">
+    <!-- Theme Toggle -->
+    <button id="theme-toggle" class="fixed top-4 right-4 z-50 p-2 bg-gray-200 dark:bg-gray-700 rounded-full hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors">
+        <i class="fas fa-moon dark:hidden text-gray-800"></i>
+        <i class="fas fa-sun hidden dark:inline text-yellow-400"></i>
     </button>
 
-    <!-- Navigation -->
-    <nav class="fixed top-0 left-0 right-0 z-40 bg-white/90 dark:bg-gray-900/90 backdrop-blur-sm border-b border-gray-200 dark:border-gray-700">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-16">
-                <div class="flex-shrink-0">
-                    <h1 class="text-xl font-bold text-gray-900 dark:text-white">Carlos Granados</h1>
+    <!-- Main Container -->
+    <div class="max-w-4xl mx-auto px-6 py-12">
+        <!-- Cover / Brief Presentation -->
+        <header class="mb-16 text-center">
+            <!-- Profile Photo -->
+            <div class="flex justify-center mb-6">
+                <div class="w-48 h-48 rounded-full bg-gradient-to-br from-blue-100 to-blue-200 dark:from-blue-800 dark:to-blue-900 flex items-center justify-center shadow-lg">
+                    <i class="fas fa-user text-6xl text-gray-400 dark:text-gray-600"></i>
                 </div>
-                <div class="hidden md:block">
-                    <ul class="flex space-x-8">
-                        <li><a href="#inicio" class="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Inicio</a></li>
-                        <li><a href="#educacion" class="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Educación</a></li>
-                        <li><a href="#experiencia" class="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Experiencia</a></li>
-                        <li><a href="#publicaciones" class="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Publicaciones</a></li>
-                        <li><a href="#habilidades" class="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Habilidades</a></li>
-                        <li><a href="#contacto" class="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Contacto</a></li>
-                    </ul>
-                </div>
-                <button id="mobile-menu-toggle" class="md:hidden text-gray-700 dark:text-gray-300">
-                    <i class="fas fa-bars"></i>
-                </button>
             </div>
-        </div>
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700">
-            <ul class="px-4 py-2 space-y-2">
-                <li><a href="#inicio" class="block py-2 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400">Inicio</a></li>
-                <li><a href="#educacion" class="block py-2 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400">Educación</a></li>
-                <li><a href="#experiencia" class="block py-2 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400">Experiencia</a></li>
-                <li><a href="#publicaciones" class="block py-2 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400">Publicaciones</a></li>
-                <li><a href="#habilidades" class="block py-2 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400">Habilidades</a></li>
-                <li><a href="#contacto" class="block py-2 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400">Contacto</a></li>
-            </ul>
-        </div>
-    </nav>
+            
+            <!-- Name and Tagline -->
+            <h1 class="text-4xl font-bold mb-2 text-gray-900 dark:text-white">Carlos Alberto Granados Ybarra</h1>
+            <p class="text-xl text-blue-600 dark:text-blue-400 mb-4 font-medium">Electronic Engineering Undergraduate | AI & Robotics Enthusiast</p>
+            
+            <!-- Brief Introduction -->
+            <div class="max-w-3xl mx-auto text-lg leading-relaxed text-gray-700 dark:text-gray-300">
+                <p class="mb-4">I am passionate about creating technology that bridges the gap between humans and machines, focusing on developing intelligent robotic systems that can understand and adapt to human needs.</p>
+                <p>My goal is to contribute to the future of human-robot interaction through innovative research and practical applications that make technology more accessible and intuitive for everyone.</p>
+            </div>
 
-    <!-- Hero Section -->
-    <section id="inicio" class="min-h-screen flex items-center pt-16 bg-gradient-to-br from-blue-50 via-white to-purple-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-            <div class="grid lg:grid-cols-2 gap-12 items-center">
-                <div class="animate-slide-up">
-                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-6">
-                        Hola, soy <span class="text-blue-600 dark:text-blue-400">Carlos Alberto</span><br>
-                        <span class="text-2xl sm:text-3xl lg:text-4xl text-gray-600 dark:text-gray-300">Granados Ybarra</span>
-                    </h1>
-                    <p class="text-lg sm:text-xl text-gray-600 dark:text-gray-300 mb-8 leading-relaxed">
-                        Ingeniero Electrónico egresado de la PUCP, con experiencia en <strong>inteligencia artificial</strong>, <strong>cloud</strong> e <strong>interacción humano-robot</strong>. Destaco por mi capacidad analítica, liderazgo, autogestión, resiliencia y pasión por el aprendizaje continuo.
+            <!-- Quick Contact Links -->
+            <div class="flex justify-center flex-wrap gap-4 mt-6 text-blue-600 dark:text-blue-400">
+                <a href="mailto:carlos.granados@pucp.edu.pe" class="hover:text-blue-800 dark:hover:text-blue-300 transition-colors">
+                    <i class="fas fa-envelope mr-1"></i>Email
+                </a>
+                <a href="#" class="hover:text-blue-800 dark:hover:text-blue-300 transition-colors">
+                    <i class="fab fa-linkedin mr-1"></i>LinkedIn
+                </a>
+                <a href="#" class="hover:text-blue-800 dark:hover:text-blue-300 transition-colors">
+                    <i class="fab fa-github mr-1"></i>GitHub
+                </a>
+                <a href="#" class="hover:text-blue-800 dark:hover:text-blue-300 transition-colors">
+                    <i class="fas fa-graduation-cap mr-1"></i>Google Scholar
+                </a>
+            </div>
+        </header>
+
+        <!-- About Me -->
+        <section class="mb-16">
+            <h2 class="text-3xl font-bold mb-8 text-gray-900 dark:text-white">About Me</h2>
+            
+            <div class="space-y-6">
+                <div class="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-sm">
+                    <p class="text-lg leading-relaxed mb-4">
+                        I am an Electronic Engineering student at <a href="https://www.pucp.edu.pe/" class="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300">Pontificia Universidad Católica del Perú (PUCP)</a>, with a deep passion for artificial intelligence, robotics, and human-computer interaction. My academic journey has been driven by curiosity about how technology can be designed to better serve humanity.
                     </p>
-                    <div class="flex flex-wrap gap-4 mb-8">
-                        <a href="#contacto" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium transition-colors duration-300">
-                            <i class="fas fa-envelope mr-2"></i>Contactar
-                        </a>
-                        <a href="#" onclick="downloadCV()" class="border border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white px-6 py-3 rounded-lg font-medium transition-all duration-300">
-                            <i class="fas fa-download mr-2"></i>Descargar CV
-                        </a>
-                    </div>
-                    <div class="flex flex-wrap gap-4">
-                        <a href="mailto:carlos.granados@pucp.edu.pe" class="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
-                            <i class="fas fa-envelope text-xl"></i>
-                        </a>
-                        <a href="tel:+51973829504" class="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
-                            <i class="fas fa-phone text-xl"></i>
-                        </a>
-                        <a href="#" class="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
-                            <i class="fab fa-linkedin text-xl"></i>
-                        </a>
-                        <a href="#" class="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
-                            <i class="fas fa-graduation-cap text-xl"></i>
-                        </a>
-                        <a href="#" class="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
-                            <i class="fab fa-orcid text-xl"></i>
-                        </a>
-                    </div>
+                    
+                    <p class="text-lg leading-relaxed mb-4">
+                        As a first-generation university student, I understand the transformative power of education and technology. This background has shaped my commitment to making cutting-edge technology more accessible and intuitive for diverse populations, particularly in educational and therapeutic contexts.
+                    </p>
+                    
+                    <p class="text-lg leading-relaxed">
+                        Currently, I work as a Junior Software Developer at <a href="#" class="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300">Fuse</a> and serve as a Research Assistant at the <a href="#" class="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300">Intelligent Robotics Group PUCP</a>, where I focus on developing systems that enable more natural and meaningful interactions between humans and robots.
+                    </p>
                 </div>
-                <div class="animate-fade-in">
-                    <div class="relative">
-                        <div class="w-80 h-80 mx-auto rounded-full bg-gradient-to-br from-blue-200 to-purple-200 dark:from-blue-800 dark:to-purple-800 flex items-center justify-center">
-                            <div class="w-72 h-72 rounded-full bg-white dark:bg-gray-800 flex items-center justify-center shadow-xl">
-                                <i class="fas fa-user text-8xl text-gray-400 dark:text-gray-600"></i>
+            </div>
+        </section>
+
+        <!-- Experience / Projects -->
+        <section class="mb-16">
+            <h2 class="text-3xl font-bold mb-8 text-gray-900 dark:text-white">Experience / Projects</h2>
+            
+            <div class="space-y-8">
+                <!-- AllyBot -->
+                <div class="project-item critical-project pl-6 py-6 bg-white dark:bg-gray-800 rounded-lg shadow-sm hover:shadow-md transition-all">
+                    <div class="flex items-start gap-6">
+                        <div class="w-32 h-32 bg-gradient-to-br from-red-100 to-red-200 dark:from-red-800 dark:to-red-900 rounded-lg flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-robot text-3xl text-red-600 dark:text-red-400"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-2xl font-semibold mb-3">
+                                <a href="#" class="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300">
+                                    AllyBot: Robotic Assistance System for Human-Robot Interaction
+                                </a>
+                            </h3>
+                            <p class="text-gray-600 dark:text-gray-400 mb-3">
+                                <span class="bg-yellow-100 dark:bg-yellow-900 text-yellow-800 dark:text-yellow-200 px-2 py-1 rounded text-sm font-medium">Best Narrative Award - TEI 2024</span>
+                            </p>
+                            <p class="text-gray-700 dark:text-gray-300 mb-4 leading-relaxed">
+                                Developed an interactive robotic system that uses natural language processing and computer vision to provide personalized assistance in educational environments. The system adapts to individual user needs and learning patterns, creating more engaging and effective educational experiences.
+                            </p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-3 py-1 rounded-full text-sm">Python</span>
+                                <span class="bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 px-3 py-1 rounded-full text-sm">ROS</span>
+                                <span class="bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 px-3 py-1 rounded-full text-sm">Computer Vision</span>
+                                <span class="bg-orange-100 dark:bg-orange-900 text-orange-800 dark:text-orange-200 px-3 py-1 rounded-full text-sm">NLP</span>
                             </div>
                         </div>
-                        <div class="absolute -bottom-4 -right-4 bg-blue-600 text-white p-4 rounded-full animate-bounce-light">
-                            <i class="fas fa-robot text-2xl"></i>
-                        </div>
                     </div>
                 </div>
-            </div>
-        </div>
-        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-            <i class="fas fa-chevron-down text-2xl text-gray-400 dark:text-gray-600"></i>
-        </div>
-    </section>
 
-    <!-- Educación Section -->
-    <section id="educacion" class="py-20 bg-white dark:bg-gray-900">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-4">Educación</h2>
-                <div class="w-24 h-1 bg-blue-600 mx-auto"></div>
-            </div>
-            <div class="space-y-8">
-                <div class="bg-gray-50 dark:bg-gray-800 rounded-xl p-8 shadow-sm hover:shadow-md transition-shadow">
-                    <div class="flex flex-col md:flex-row md:items-center justify-between mb-4">
-                        <h3 class="text-xl font-bold text-gray-900 dark:text-white">Pontificia Universidad Católica del Perú (PUCP)</h3>
-                        <span class="text-blue-600 dark:text-blue-400 font-medium">2019–2025</span>
+                <!-- Yachabot -->
+                <div class="project-item pl-6 py-6 bg-white dark:bg-gray-800 rounded-lg shadow-sm hover:shadow-md transition-all">
+                    <div class="flex items-start gap-6">
+                        <div class="w-32 h-32 bg-gradient-to-br from-blue-100 to-blue-200 dark:from-blue-800 dark:to-blue-900 rounded-lg flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-brain text-3xl text-blue-600 dark:text-blue-400"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-2xl font-semibold mb-3">
+                                <a href="#" class="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300">
+                                    Yachabot: Educational Robot with Conversational AI
+                                </a>
+                            </h3>
+                            <p class="text-gray-700 dark:text-gray-300 mb-4 leading-relaxed">
+                                Educational robot that employs conversational AI to adapt to individual student learning styles. The system provides personalized tutoring experiences and helps students develop critical thinking skills through interactive dialogue.
+                            </p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-3 py-1 rounded-full text-sm">Python</span>
+                                <span class="bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 px-3 py-1 rounded-full text-sm">Machine Learning</span>
+                                <span class="bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 px-3 py-1 rounded-full text-sm">Conversational AI</span>
+                                <span class="bg-red-100 dark:bg-red-900 text-red-800 dark:text-red-200 px-3 py-1 rounded-full text-sm">Educational Technology</span>
+                            </div>
+                        </div>
                     </div>
-                    <p class="text-gray-600 dark:text-gray-300 mb-2">Ingeniería Electrónica</p>
-                    <span class="inline-block bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-3 py-1 rounded-full text-sm">Becario Beca 18</span>
                 </div>
-                <div class="bg-gray-50 dark:bg-gray-800 rounded-xl p-8 shadow-sm hover:shadow-md transition-shadow">
-                    <div class="flex flex-col md:flex-row md:items-center justify-between mb-4">
-                        <h3 class="text-xl font-bold text-gray-900 dark:text-white">Oracle Next Education (Alura/Oracle)</h3>
-                        <span class="text-blue-600 dark:text-blue-400 font-medium">2023–2024</span>
-                    </div>
-                </div>
-                <div class="bg-gray-50 dark:bg-gray-800 rounded-xl p-8 shadow-sm hover:shadow-md transition-shadow">
-                    <div class="flex flex-col md:flex-row md:items-center justify-between mb-4">
-                        <h3 class="text-xl font-bold text-gray-900 dark:text-white">COAR Lima</h3>
-                        <span class="text-blue-600 dark:text-blue-400 font-medium">Bachillerato</span>
-                    </div>
-                    <p class="text-gray-600 dark:text-gray-300">Bachillerato Internacional (IB)</p>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Experiencia Section -->
-    <section id="experiencia" class="py-20 bg-gray-50 dark:bg-gray-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-4">Experiencia Laboral</h2>
-                <div class="w-24 h-1 bg-blue-600 mx-auto"></div>
-            </div>
-            <div class="space-y-8">
-                <div class="bg-white dark:bg-gray-900 rounded-xl p-8 shadow-sm hover:shadow-md transition-shadow">
-                    <div class="flex flex-col md:flex-row md:items-center justify-between mb-4">
-                        <div>
-                            <h3 class="text-xl font-bold text-gray-900 dark:text-white">Junior Software Developer</h3>
-                            <p class="text-blue-600 dark:text-blue-400 font-medium">Fuse (Remoto, NY)</p>
+                <!-- PlantiBot -->
+                <div class="project-item pl-6 py-6 bg-white dark:bg-gray-800 rounded-lg shadow-sm hover:shadow-md transition-all">
+                    <div class="flex items-start gap-6">
+                        <div class="w-32 h-32 bg-gradient-to-br from-green-100 to-green-200 dark:from-green-800 dark:to-green-900 rounded-lg flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-seedling text-3xl text-green-600 dark:text-green-400"></i>
                         </div>
-                        <span class="text-gray-600 dark:text-gray-300">2025 – Presente</span>
+                        <div class="flex-1">
+                            <h3 class="text-2xl font-semibold mb-3">
+                                <a href="#" class="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300">
+                                    PlantiBot: Smart Agricultural Monitoring System
+                                </a>
+                            </h3>
+                            <p class="text-gray-700 dark:text-gray-300 mb-4 leading-relaxed">
+                                Autonomous system that combines mobile robotics and IoT sensors for intelligent crop monitoring and care. The system optimizes water and nutritional resources while providing real-time data analytics for precision agriculture.
+                            </p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-3 py-1 rounded-full text-sm">IoT</span>
+                                <span class="bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 px-3 py-1 rounded-full text-sm">Robotics</span>
+                                <span class="bg-yellow-100 dark:bg-yellow-900 text-yellow-800 dark:text-yellow-200 px-3 py-1 rounded-full text-sm">Agriculture</span>
+                                <span class="bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 px-3 py-1 rounded-full text-sm">Data Analytics</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="bg-white dark:bg-gray-900 rounded-xl p-8 shadow-sm hover:shadow-md transition-shadow">
-                    <div class="flex flex-col md:flex-row md:items-center justify-between mb-4">
-                        <div>
-                            <h3 class="text-xl font-bold text-gray-900 dark:text-white">Tester</h3>
-                            <p class="text-blue-600 dark:text-blue-400 font-medium">DeepLearning.AI</p>
-                        </div>
-                        <span class="text-gray-600 dark:text-gray-300">2025</span>
-                    </div>
-                </div>
-                <div class="bg-white dark:bg-gray-900 rounded-xl p-8 shadow-sm hover:shadow-md transition-shadow">
-                    <div class="flex flex-col md:flex-row md:items-center justify-between mb-4">
-                        <div>
-                            <h3 class="text-xl font-bold text-gray-900 dark:text-white">Asistente de Docencia</h3>
-                            <p class="text-blue-600 dark:text-blue-400 font-medium">PUCP</p>
-                        </div>
-                        <span class="text-gray-600 dark:text-gray-300">2024 – Presente</span>
-                    </div>
-                </div>
-                <div class="bg-white dark:bg-gray-900 rounded-xl p-8 shadow-sm hover:shadow-md transition-shadow">
-                    <div class="flex flex-col md:flex-row md:items-center justify-between mb-4">
-                        <div>
-                            <h3 class="text-xl font-bold text-gray-900 dark:text-white">Intern en Ciberseguridad</h3>
-                            <p class="text-blue-600 dark:text-blue-400 font-medium">ISA REP</p>
-                        </div>
-                        <span class="text-gray-600 dark:text-gray-300">2024–2025</span>
-                    </div>
-                </div>
-                <div class="bg-white dark:bg-gray-900 rounded-xl p-8 shadow-sm hover:shadow-md transition-shadow">
-                    <div class="flex flex-col md:flex-row md:items-center justify-between mb-4">
-                        <div>
-                            <h3 class="text-xl font-bold text-gray-900 dark:text-white">Asistente de Investigación</h3>
-                            <p class="text-blue-600 dark:text-blue-400 font-medium">Grupo de Robótica Inteligente PUCP</p>
-                        </div>
-                        <span class="text-gray-600 dark:text-gray-300">2022 – Presente</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Publicaciones Section -->
-    <section id="publicaciones" class="py-20 bg-white dark:bg-gray-900">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-4">Publicaciones</h2>
-                <div class="w-24 h-1 bg-blue-600 mx-auto mb-8"></div>
-                <div class="flex justify-center space-x-8 mb-8">
-                    <div class="text-center">
-                        <div class="text-3xl font-bold text-blue-600 dark:text-blue-400">6</div>
-                        <div class="text-gray-600 dark:text-gray-300">Citas</div>
-                    </div>
-                    <div class="text-center">
-                        <div class="text-3xl font-bold text-blue-600 dark:text-blue-400">2</div>
-                        <div class="text-gray-600 dark:text-gray-300">h-index</div>
-                    </div>
-                </div>
-            </div>
-            <div class="grid md:grid-cols-2 gap-8">
-                <div class="bg-gray-50 dark:bg-gray-800 rounded-xl p-8 shadow-sm hover:shadow-md transition-shadow">
-                    <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4">AllyBot</h3>
-                    <p class="text-gray-600 dark:text-gray-300 mb-4">Publicado en ACM/IEEE HRI 2024, ACM TEI 2024</p>
-                    <div class="flex space-x-4">
-                        <a href="#" class="text-blue-600 dark:text-blue-400 hover:underline">
-                            <i class="fas fa-external-link-alt mr-1"></i>Ver publicación
-                        </a>
-                    </div>
-                </div>
-                <div class="bg-gray-50 dark:bg-gray-800 rounded-xl p-8 shadow-sm hover:shadow-md transition-shadow">
-                    <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4">Cogui</h3>
-                    <p class="text-gray-600 dark:text-gray-300 mb-4">Publicado en HRI 2023</p>
-                    <div class="flex space-x-4">
-                        <a href="#" class="text-blue-600 dark:text-blue-400 hover:underline">
-                            <i class="fas fa-external-link-alt mr-1"></i>Ver publicación
-                        </a>
-                    </div>
-                </div>
-                <div class="bg-gray-50 dark:bg-gray-800 rounded-xl p-8 shadow-sm hover:shadow-md transition-shadow">
-                    <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4">PlantiBot</h3>
-                    <p class="text-gray-600 dark:text-gray-300 mb-4">Publicado en TEI 2025</p>
-                    <div class="flex space-x-4">
-                        <a href="#" class="text-blue-600 dark:text-blue-400 hover:underline">
-                            <i class="fas fa-external-link-alt mr-1"></i>Ver publicación
-                        </a>
-                    </div>
-                </div>
-                <div class="bg-gray-50 dark:bg-gray-800 rounded-xl p-8 shadow-sm hover:shadow-md transition-shadow">
-                    <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4">Yachabot</h3>
-                    <p class="text-gray-600 dark:text-gray-300 mb-4">Publicado en HRI 2024</p>
-                    <div class="flex space-x-4">
-                        <a href="#" class="text-blue-600 dark:text-blue-400 hover:underline">
-                            <i class="fas fa-external-link-alt mr-1"></i>Ver publicación
-                        </a>
+                <!-- Cogui -->
+                <div class="project-item pl-6 py-6 bg-white dark:bg-gray-800 rounded-lg shadow-sm hover:shadow-md transition-all">
+                    <div class="flex items-start gap-6">
+                        <div class="w-32 h-32 bg-gradient-to-br from-purple-100 to-purple-200 dark:from-purple-800 dark:to-purple-900 rounded-lg flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-comments text-3xl text-purple-600 dark:text-purple-400"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-2xl font-semibold mb-3">
+                                <a href="#" class="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300">
+                                    Cogui: Cognitive Assistant for Multimodal Interaction
+                                </a>
+                            </h3>
+                            <p class="text-gray-600 dark:text-gray-400 mb-3">
+                                <span class="bg-orange-100 dark:bg-orange-900 text-orange-800 dark:text-orange-200 px-2 py-1 rounded text-sm font-medium">Honorable Mention - RO-MAN 2023</span>
+                            </p>
+                            <p class="text-gray-700 dark:text-gray-300 mb-4 leading-relaxed">
+                                Multimodal communication interface that enables natural interactions between humans and robots through voice, gestures, and facial expressions. The system creates more intuitive and accessible human-robot collaboration experiences.
+                            </p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-3 py-1 rounded-full text-sm">Computer Vision</span>
+                                <span class="bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 px-3 py-1 rounded-full text-sm">Speech Recognition</span>
+                                <span class="bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 px-3 py-1 rounded-full text-sm">Gesture Recognition</span>
+                                <span class="bg-red-100 dark:bg-red-900 text-red-800 dark:text-red-200 px-3 py-1 rounded-full text-sm">HRI</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Certificaciones Section -->
-    <section id="certificaciones" class="py-20 bg-gray-50 dark:bg-gray-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-4">Certificaciones</h2>
-                <div class="w-24 h-1 bg-blue-600 mx-auto"></div>
+        <!-- Publications and Contributions -->
+        <section class="mb-16">
+            <h2 class="text-3xl font-bold mb-8 text-gray-900 dark:text-white">Publications and Contributions</h2>
+            
+            <div class="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-sm mb-8">
+                <p class="text-lg leading-relaxed text-gray-700 dark:text-gray-300 mb-4">
+                    My research contributions focus on advancing human-robot interaction through innovative applications of artificial intelligence and machine learning. I have been recognized at top-tier international conferences for developing systems that make technology more accessible and intuitive.
+                </p>
+                <div class="flex gap-4">
+                    <a href="#" class="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 transition-colors">
+                        <i class="fas fa-graduation-cap mr-1"></i>Google Scholar Profile
+                    </a>
+                    <a href="#" class="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 transition-colors">
+                        <i class="fab fa-researchgate mr-1"></i>ResearchGate
+                    </a>
+                    <a href="#" class="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 transition-colors">
+                        <i class="fab fa-orcid mr-1"></i>ORCID
+                    </a>
+                </div>
             </div>
+
+            <div class="space-y-6">
+                <div class="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-sm border-l-4 border-yellow-500">
+                    <h3 class="text-lg font-semibold mb-2">AllyBot: Robotic Assistance System for Human-Robot Interaction</h3>
+                    <p class="text-gray-600 dark:text-gray-400 mb-2"><strong>Carlos Granados</strong>, [Collaborators]</p>
+                    <p class="text-sm text-gray-500 dark:text-gray-500 mb-2">ACM/IEEE HRI 2024, ACM TEI 2024</p>
+                    <p class="text-yellow-600 dark:text-yellow-400 font-semibold text-sm">🏆 Best Narrative Award - TEI 2024</p>
+                </div>
+                
+                <div class="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-sm border-l-4 border-blue-500">
+                    <h3 class="text-lg font-semibold mb-2">Yachabot: Educational Robot with Conversational Artificial Intelligence</h3>
+                    <p class="text-gray-600 dark:text-gray-400 mb-2"><strong>Carlos Granados</strong>, [Collaborators]</p>
+                    <p class="text-sm text-gray-500 dark:text-gray-500">HRI 2024</p>
+                </div>
+                
+                <div class="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-sm border-l-4 border-green-500">
+                    <h3 class="text-lg font-semibold mb-2">PlantiBot: Robotic System for Intelligent Agricultural Monitoring</h3>
+                    <p class="text-gray-600 dark:text-gray-400 mb-2"><strong>Carlos Granados</strong>, [Collaborators]</p>
+                    <p class="text-sm text-gray-500 dark:text-gray-500">TEI 2025</p>
+                </div>
+                
+                <div class="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-sm border-l-4 border-orange-500">
+                    <h3 class="text-lg font-semibold mb-2">Cogui: Cognitive Assistant for Multimodal Interaction</h3>
+                    <p class="text-gray-600 dark:text-gray-400 mb-2"><strong>Carlos Granados</strong>, [Collaborators]</p>
+                    <p class="text-sm text-gray-500 dark:text-gray-500 mb-2">HRI 2023</p>
+                    <p class="text-orange-600 dark:text-orange-400 font-semibold text-sm">🏅 Honorable Mention - RO-MAN 2023</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills and Technologies -->
+        <section class="mb-16">
+            <h2 class="text-3xl font-bold mb-8 text-gray-900 dark:text-white">Skills and Technologies</h2>
+            
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div class="bg-white dark:bg-gray-900 p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow text-center">
-                    <i class="fab fa-microsoft text-4xl text-blue-600 mb-4"></i>
-                    <h3 class="font-bold text-gray-900 dark:text-white mb-2">Microsoft Certified</h3>
-                    <p class="text-gray-600 dark:text-gray-300 text-sm">Azure AI Engineer Associate</p>
+                <div class="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-sm">
+                    <h3 class="text-lg font-semibold mb-4 text-gray-900 dark:text-white flex items-center">
+                        <i class="fas fa-code mr-2 text-blue-600"></i>Programming Languages
+                    </h3>
+                    <div class="space-y-3">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center gap-2">
+                                <i class="fab fa-python text-blue-600"></i>
+                                <span class="text-gray-700 dark:text-gray-300">Python</span>
+                            </div>
+                            <span class="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-2 py-1 rounded text-xs">Expert</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center gap-2">
+                                <i class="fas fa-code text-gray-600"></i>
+                                <span class="text-gray-700 dark:text-gray-300">C/C++</span>
+                            </div>
+                            <span class="bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 px-2 py-1 rounded text-xs">Advanced</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center gap-2">
+                                <i class="fas fa-database text-orange-600"></i>
+                                <span class="text-gray-700 dark:text-gray-300">SQL</span>
+                            </div>
+                            <span class="bg-yellow-100 dark:bg-yellow-900 text-yellow-800 dark:text-yellow-200 px-2 py-1 rounded text-xs">Intermediate</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="bg-white dark:bg-gray-900 p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow text-center">
-                    <i class="fas fa-brain text-4xl text-green-600 mb-4"></i>
-                    <h3 class="font-bold text-gray-900 dark:text-white mb-2">DeepLearning.AI</h3>
-                    <p class="text-gray-600 dark:text-gray-300 text-sm">Machine Learning Specialization</p>
+                
+                <div class="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-sm">
+                    <h3 class="text-lg font-semibold mb-4 text-gray-900 dark:text-white flex items-center">
+                        <i class="fas fa-cloud mr-2 text-blue-500"></i>Cloud & Infrastructure
+                    </h3>
+                    <div class="space-y-3">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center gap-2">
+                                <i class="fab fa-microsoft text-blue-600"></i>
+                                <span class="text-gray-700 dark:text-gray-300">Microsoft Azure</span>
+                            </div>
+                            <span class="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-2 py-1 rounded text-xs">Certified</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center gap-2">
+                                <i class="fab fa-aws text-orange-500"></i>
+                                <span class="text-gray-700 dark:text-gray-300">AWS</span>
+                            </div>
+                            <span class="bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 px-2 py-1 rounded text-xs">Advanced</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center gap-2">
+                                <i class="fab fa-google text-blue-500"></i>
+                                <span class="text-gray-700 dark:text-gray-300">Google Cloud</span>
+                            </div>
+                            <span class="bg-yellow-100 dark:bg-yellow-900 text-yellow-800 dark:text-yellow-200 px-2 py-1 rounded text-xs">Intermediate</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="bg-white dark:bg-gray-900 p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow text-center">
-                    <i class="fas fa-robot text-4xl text-orange-600 mb-4"></i>
-                    <h3 class="font-bold text-gray-900 dark:text-white mb-2">HuggingFace</h3>
-                    <p class="text-gray-600 dark:text-gray-300 text-sm">AI Agents Fundamentals</p>
+                
+                <div class="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-sm">
+                    <h3 class="text-lg font-semibold mb-4 text-gray-900 dark:text-white flex items-center">
+                        <i class="fas fa-brain mr-2 text-purple-600"></i>AI & Machine Learning
+                    </h3>
+                    <div class="space-y-3">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center gap-2">
+                                <i class="fas fa-neural-network text-purple-600"></i>
+                                <span class="text-gray-700 dark:text-gray-300">Deep Learning</span>
+                            </div>
+                            <span class="bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 px-2 py-1 rounded text-xs">Expert</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center gap-2">
+                                <i class="fas fa-robot text-green-600"></i>
+                                <span class="text-gray-700 dark:text-gray-300">Generative AI</span>
+                            </div>
+                            <span class="bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 px-2 py-1 rounded text-xs">Advanced</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center gap-2">
+                                <i class="fas fa-eye text-red-600"></i>
+                                <span class="text-gray-700 dark:text-gray-300">Computer Vision</span>
+                            </div>
+                            <span class="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-2 py-1 rounded text-xs">Expert</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="bg-white dark:bg-gray-900 p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow text-center">
-                    <i class="fas fa-database text-4xl text-red-600 mb-4"></i>
-                    <h3 class="font-bold text-gray-900 dark:text-white mb-2">Databricks</h3>
-                    <p class="text-gray-600 dark:text-gray-300 text-sm">Fundamentals</p>
+                
+                <div class="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-sm">
+                    <h3 class="text-lg font-semibold mb-4 text-gray-900 dark:text-white flex items-center">
+                        <i class="fas fa-robot mr-2 text-red-600"></i>Robotics & Hardware
+                    </h3>
+                    <div class="space-y-3">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center gap-2">
+                                <i class="fas fa-handshake text-blue-500"></i>
+                                <span class="text-gray-700 dark:text-gray-300">Human-Robot Interaction</span>
+                            </div>
+                            <span class="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-2 py-1 rounded text-xs">Expert</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center gap-2">
+                                <i class="fas fa-microchip text-gray-600"></i>
+                                <span class="text-gray-700 dark:text-gray-300">Embedded Systems</span>
+                            </div>
+                            <span class="bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 px-2 py-1 rounded text-xs">Advanced</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center gap-2">
+                                <i class="fas fa-cogs text-orange-600"></i>
+                                <span class="text-gray-700 dark:text-gray-300">Control Systems</span>
+                            </div>
+                            <span class="bg-yellow-100 dark:bg-yellow-900 text-yellow-800 dark:text-yellow-200 px-2 py-1 rounded text-xs">Advanced</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="bg-white dark:bg-gray-900 p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow text-center">
-                    <i class="fab fa-google text-4xl text-blue-500 mb-4"></i>
-                    <h3 class="font-bold text-gray-900 dark:text-white mb-2">Google Cloud</h3>
-                    <p class="text-gray-600 dark:text-gray-300 text-sm">Foundations</p>
-                </div>
-                <div class="bg-white dark:bg-gray-900 p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow text-center">
-                    <i class="fab fa-aws text-4xl text-yellow-600 mb-4"></i>
-                    <h3 class="font-bold text-gray-900 dark:text-white mb-2">AWS</h3>
-                    <p class="text-gray-600 dark:text-gray-300 text-sm">ML Foundations</p>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Habilidades Section -->
-    <section id="habilidades" class="py-20 bg-white dark:bg-gray-900">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-4">Habilidades</h2>
-                <div class="w-24 h-1 bg-blue-600 mx-auto"></div>
-            </div>
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <div class="bg-gray-50 dark:bg-gray-800 p-8 rounded-xl">
-                    <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-6">Lenguajes</h3>
-                    <div class="space-y-4">
-                        <div class="flex items-center">
-                            <i class="fab fa-python text-2xl text-blue-600 mr-3"></i>
-                            <span class="text-gray-700 dark:text-gray-300">Python</span>
-                        </div>
-                        <div class="flex items-center">
-                            <i class="fas fa-code text-2xl text-gray-600 mr-3"></i>
-                            <span class="text-gray-700 dark:text-gray-300">C</span>
-                        </div>
-                        <div class="flex items-center">
-                            <i class="fas fa-code text-2xl text-blue-500 mr-3"></i>
-                            <span class="text-gray-700 dark:text-gray-300">C++</span>
-                        </div>
-                        <div class="flex items-center">
-                            <i class="fas fa-database text-2xl text-orange-600 mr-3"></i>
-                            <span class="text-gray-700 dark:text-gray-300">SQL</span>
-                        </div>
+                <div class="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-sm">
+                    <h3 class="text-lg font-semibold mb-4 text-gray-900 dark:text-white flex items-center">
+                        <i class="fas fa-tools mr-2 text-green-600"></i>Frameworks & Tools
+                    </h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200 px-3 py-1 rounded-full text-sm">TensorFlow</span>
+                        <span class="bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200 px-3 py-1 rounded-full text-sm">PyTorch</span>
+                        <span class="bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200 px-3 py-1 rounded-full text-sm">ROS</span>
+                        <span class="bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200 px-3 py-1 rounded-full text-sm">OpenCV</span>
+                        <span class="bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200 px-3 py-1 rounded-full text-sm">Docker</span>
+                        <span class="bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200 px-3 py-1 rounded-full text-sm">Git</span>
                     </div>
                 </div>
-                <div class="bg-gray-50 dark:bg-gray-800 p-8 rounded-xl">
-                    <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-6">Cloud</h3>
-                    <div class="space-y-4">
-                        <div class="flex items-center">
-                            <i class="fab fa-microsoft text-2xl text-blue-600 mr-3"></i>
-                            <span class="text-gray-700 dark:text-gray-300">Azure</span>
-                        </div>
-                        <div class="flex items-center">
-                            <i class="fab fa-aws text-2xl text-orange-500 mr-3"></i>
-                            <span class="text-gray-700 dark:text-gray-300">AWS</span>
-                        </div>
-                        <div class="flex items-center">
-                            <i class="fab fa-google text-2xl text-blue-500 mr-3"></i>
-                            <span class="text-gray-700 dark:text-gray-300">Google Cloud</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="bg-gray-50 dark:bg-gray-800 p-8 rounded-xl">
-                    <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-6">IA/ML</h3>
-                    <div class="space-y-4">
-                        <div class="flex items-center">
-                            <i class="fas fa-brain text-2xl text-purple-600 mr-3"></i>
-                            <span class="text-gray-700 dark:text-gray-300">Deep Learning</span>
-                        </div>
-                        <div class="flex items-center">
-                            <i class="fas fa-robot text-2xl text-green-600 mr-3"></i>
-                            <span class="text-gray-700 dark:text-gray-300">IA Generativa</span>
-                        </div>
-                        <div class="flex items-center">
-                            <i class="fas fa-handshake text-2xl text-blue-500 mr-3"></i>
-                            <span class="text-gray-700 dark:text-gray-300">HRI</span>
-                        </div>
-                        <div class="flex items-center">
-                            <i class="fas fa-eye text-2xl text-red-600 mr-3"></i>
-                            <span class="text-gray-700 dark:text-gray-300">Computer Vision</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="bg-gray-50 dark:bg-gray-800 p-8 rounded-xl">
-                    <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-6">Visualización</h3>
-                    <div class="space-y-4">
-                        <div class="flex items-center">
-                            <i class="fas fa-chart-bar text-2xl text-yellow-600 mr-3"></i>
-                            <span class="text-gray-700 dark:text-gray-300">Power BI</span>
-                        </div>
-                        <div class="flex items-center">
-                            <i class="fas fa-chart-line text-2xl text-blue-600 mr-3"></i>
-                            <span class="text-gray-700 dark:text-gray-300">Tableau</span>
-                        </div>
-                        <div class="flex items-center">
-                            <i class="fab fa-google text-2xl text-green-600 mr-3"></i>
-                            <span class="text-gray-700 dark:text-gray-300">Looker Studio</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Premios Section -->
-    <section id="premios" class="py-20 bg-gray-50 dark:bg-gray-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-4">Premios y Logros</h2>
-                <div class="w-24 h-1 bg-blue-600 mx-auto"></div>
+                <div class="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-sm">
+                    <h3 class="text-lg font-semibold mb-4 text-gray-900 dark:text-white flex items-center">
+                        <i class="fas fa-language mr-2 text-blue-600"></i>Languages
+                    </h3>
+                    <div class="space-y-3">
+                        <div class="flex items-center justify-between">
+                            <span class="text-gray-700 dark:text-gray-300">Spanish</span>
+                            <span class="bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 px-2 py-1 rounded text-xs">Native</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-gray-700 dark:text-gray-300">English</span>
+                            <span class="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-2 py-1 rounded text-xs">C2 (EF SET)</span>
+                        </div>
+                    </div>
+                </div>
             </div>
+        </section>
+
+        <!-- Education and Certifications -->
+        <section class="mb-16">
+            <h2 class="text-3xl font-bold mb-8 text-gray-900 dark:text-white">Education and Certifications</h2>
+            
+            <div class="space-y-6">
+                <!-- University Education -->
+                <div class="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-sm hover:shadow-md transition-all">
+                    <div class="flex justify-between items-start mb-3">
+                        <div>
+                            <h3 class="text-xl font-semibold text-gray-900 dark:text-white">
+                                Pontificia Universidad Católica del Perú (PUCP)
+                            </h3>
+                            <p class="text-lg text-gray-700 dark:text-gray-300">Bachelor of Electronic Engineering</p>
+                        </div>
+                        <span class="text-gray-600 dark:text-gray-400 bg-gray-100 dark:bg-gray-700 px-3 py-1 rounded">2019–2025</span>
+                    </div>
+                    <p class="text-blue-600 dark:text-blue-400 font-medium">🎓 Beca 18 Scholar</p>
+                    <p class="text-gray-600 dark:text-gray-400 mt-2">Specialization in Artificial Intelligence, Robotics, and Human-Computer Interaction</p>
+                </div>
+                
+                <!-- Professional Training -->
+                <div class="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-sm hover:shadow-md transition-all">
+                    <div class="flex justify-between items-start mb-3">
+                        <div>
+                            <h3 class="text-xl font-semibold text-gray-900 dark:text-white">
+                                Oracle Next Education (Alura/Oracle)
+                            </h3>
+                            <p class="text-lg text-gray-700 dark:text-gray-300">Technology Training Program</p>
+                        </div>
+                        <span class="text-gray-600 dark:text-gray-400 bg-gray-100 dark:bg-gray-700 px-3 py-1 rounded">2023–2024</span>
+                    </div>
+                    <p class="text-gray-600 dark:text-gray-400">Advanced training in cloud computing, software development, and emerging technologies</p>
+                </div>
+                
+                <!-- High School -->
+                <div class="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-sm hover:shadow-md transition-all">
+                    <div class="flex justify-between items-start mb-3">
+                        <div>
+                            <h3 class="text-xl font-semibold text-gray-900 dark:text-white">
+                                COAR Lima
+                            </h3>
+                            <p class="text-lg text-gray-700 dark:text-gray-300">International Baccalaureate (IB)</p>
+                        </div>
+                        <span class="text-gray-600 dark:text-gray-400 bg-gray-100 dark:bg-gray-700 px-3 py-1 rounded">High School</span>
+                    </div>
+                    <p class="text-gray-600 dark:text-gray-400">Rigorous international curriculum with focus on STEM subjects</p>
+                </div>
+
+                <!-- Certifications -->
+                <div class="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-sm">
+                    <h3 class="text-xl font-semibold mb-4 text-gray-900 dark:text-white">Professional Certifications</h3>
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div class="flex items-center gap-3 p-3 bg-gray-50 dark:bg-gray-700 rounded">
+                            <i class="fab fa-microsoft text-blue-600 text-xl"></i>
+                            <div>
+                                <p class="font-medium text-gray-900 dark:text-white">Azure AI Engineer Associate</p>
+                                <p class="text-sm text-gray-600 dark:text-gray-400">Microsoft Certified</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-3 p-3 bg-gray-50 dark:bg-gray-700 rounded">
+                            <i class="fas fa-brain text-purple-600 text-xl"></i>
+                            <div>
+                                <p class="font-medium text-gray-900 dark:text-white">Machine Learning Specialization</p>
+                                <p class="text-sm text-gray-600 dark:text-gray-400">DeepLearning.AI</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-3 p-3 bg-gray-50 dark:bg-gray-700 rounded">
+                            <i class="fas fa-robot text-green-600 text-xl"></i>
+                            <div>
+                                <p class="font-medium text-gray-900 dark:text-white">AI Agents Fundamentals</p>
+                                <p class="text-sm text-gray-600 dark:text-gray-400">HuggingFace</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-3 p-3 bg-gray-50 dark:bg-gray-700 rounded">
+                            <i class="fas fa-database text-orange-600 text-xl"></i>
+                            <div>
+                                <p class="font-medium text-gray-900 dark:text-white">Databricks Fundamentals</p>
+                                <p class="text-sm text-gray-600 dark:text-gray-400">Databricks</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact and Networks -->
+        <section class="mb-16">
+            <h2 class="text-3xl font-bold mb-8 text-gray-900 dark:text-white">Contact and Networks</h2>
+            
             <div class="grid md:grid-cols-2 gap-8">
-                <div class="bg-white dark:bg-gray-900 p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow">
-                    <div class="flex items-start">
-                        <i class="fas fa-award text-3xl text-yellow-500 mr-4 mt-1"></i>
-                        <div>
-                            <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Best Narrative Award</h3>
-                            <p class="text-gray-600 dark:text-gray-300 mb-2">TEI 2024 (ACM)</p>
+                <!-- Contact Information -->
+                <div class="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-sm">
+                    <h3 class="text-xl font-semibold mb-6 text-gray-900 dark:text-white">Get in Touch</h3>
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-center gap-3">
+                            <i class="fas fa-envelope text-blue-600 text-xl"></i>
+                            <div>
+                                <p class="font-medium text-gray-900 dark:text-white">Email</p>
+                                <a href="mailto:carlos.granados@pucp.edu.pe" class="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300">
+                                    carlos.granados@pucp.edu.pe
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center gap-3">
+                            <i class="fas fa-phone text-green-600 text-xl"></i>
+                            <div>
+                                <p class="font-medium text-gray-900 dark:text-white">Phone</p>
+                                <p class="text-gray-600 dark:text-gray-400">(+51) 973829504</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center gap-3">
+                            <i class="fas fa-map-marker-alt text-red-600 text-xl"></i>
+                            <div>
+                                <p class="font-medium text-gray-900 dark:text-white">Location</p>
+                                <p class="text-gray-600 dark:text-gray-400">Lima, Peru</p>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="bg-white dark:bg-gray-900 p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow">
-                    <div class="flex items-start">
-                        <i class="fas fa-medal text-3xl text-gray-500 mr-4 mt-1"></i>
-                        <div>
-                            <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Honorable Mention</h3>
-                            <p class="text-gray-600 dark:text-gray-300 mb-2">RO-MAN 2023 (IEEE)</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="bg-white dark:bg-gray-900 p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow">
-                    <div class="flex items-start">
-                        <i class="fas fa-trophy text-3xl text-bronze-500 mr-4 mt-1"></i>
-                        <div>
-                            <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Finalista</h3>
-                            <p class="text-gray-600 dark:text-gray-300 mb-2">ICSR 2022 (Springer)</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="bg-white dark:bg-gray-900 p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow">
-                    <div class="flex items-start">
-                        <i class="fas fa-microphone text-3xl text-blue-500 mr-4 mt-1"></i>
-                        <div>
-                            <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Speaker</h3>
-                            <p class="text-gray-600 dark:text-gray-300 mb-2">Arduino Day 2023</p>
-                        </div>
+                
+                <!-- Social Networks -->
+                <div class="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-sm">
+                    <h3 class="text-xl font-semibold mb-6 text-gray-900 dark:text-white">Professional Networks</h3>
+                    
+                    <div class="grid grid-cols-2 gap-4">
+                        <a href="#" class="flex items-center gap-3 p-3 bg-gray-50 dark:bg-gray-700 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-600 transition-colors group">
+                            <i class="fab fa-linkedin text-blue-600 text-2xl group-hover:scale-110 transition-transform"></i>
+                            <div>
+                                <p class="font-medium text-gray-900 dark:text-white">LinkedIn</p>
+                                <p class="text-sm text-gray-600 dark:text-gray-400">Professional Profile</p>
+                            </div>
+                        </a>
+                        
+                        <a href="#" class="flex items-center gap-3 p-3 bg-gray-50 dark:bg-gray-700 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-600 transition-colors group">
+                            <i class="fab fa-github text-gray-800 dark:text-gray-200 text-2xl group-hover:scale-110 transition-transform"></i>
+                            <div>
+                                <p class="font-medium text-gray-900 dark:text-white">GitHub</p>
+                                <p class="text-sm text-gray-600 dark:text-gray-400">Code Repository</p>
+                            </div>
+                        </a>
+                        
+                        <a href="#" class="flex items-center gap-3 p-3 bg-gray-50 dark:bg-gray-700 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-600 transition-colors group">
+                            <i class="fas fa-graduation-cap text-blue-800 text-2xl group-hover:scale-110 transition-transform"></i>
+                            <div>
+                                <p class="font-medium text-gray-900 dark:text-white">Google Scholar</p>
+                                <p class="text-sm text-gray-600 dark:text-gray-400">Research Publications</p>
+                            </div>
+                        </a>
+                        
+                        <a href="#" class="flex items-center gap-3 p-3 bg-gray-50 dark:bg-gray-700 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-600 transition-colors group">
+                            <i class="fab fa-orcid text-green-600 text-2xl group-hover:scale-110 transition-transform"></i>
+                            <div>
+                                <p class="font-medium text-gray-900 dark:text-white">ORCID</p>
+                                <p class="text-sm text-gray-600 dark:text-gray-400">Academic ID</p>
+                            </div>
+                        </a>
+                        
+                        <a href="#" class="flex items-center gap-3 p-3 bg-gray-50 dark:bg-gray-700 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-600 transition-colors group">
+                            <i class="fab fa-researchgate text-cyan-600 text-2xl group-hover:scale-110 transition-transform"></i>
+                            <div>
+                                <p class="font-medium text-gray-900 dark:text-white">ResearchGate</p>
+                                <p class="text-sm text-gray-600 dark:text-gray-400">Research Network</p>
+                            </div>
+                        </a>
+                        
+                        <a href="#" onclick="downloadCV()" class="flex items-center gap-3 p-3 bg-blue-50 dark:bg-blue-900/30 rounded-lg hover:bg-blue-100 dark:hover:bg-blue-900/50 transition-colors group cursor-pointer">
+                            <i class="fas fa-file-pdf text-red-600 text-2xl group-hover:scale-110 transition-transform"></i>
+                            <div>
+                                <p class="font-medium text-gray-900 dark:text-white">Download CV</p>
+                                <p class="text-sm text-gray-600 dark:text-gray-400">PDF Format</p>
+                            </div>
+                        </a>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+            
+            <!-- Call to Action -->
+            <div class="mt-8 text-center bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-blue-900/20 dark:to-indigo-900/20 rounded-lg p-8">
+                <h3 class="text-2xl font-semibold mb-4 text-gray-900 dark:text-white">Let's Collaborate!</h3>
+                <p class="text-lg text-gray-700 dark:text-gray-300 mb-6 max-w-2xl mx-auto">
+                    I'm always interested in discussing new research opportunities, potential collaborations, 
+                    or innovative projects in AI and robotics. Feel free to reach out!
+                </p>
+                <a href="mailto:carlos.granados@pucp.edu.pe" class="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium transition-colors">
+                    <i class="fas fa-envelope"></i>
+                    Send a Message
+                </a>
+            </div>
+        </section>
 
-    <!-- Idiomas Section -->
-    <section id="idiomas" class="py-20 bg-white dark:bg-gray-900">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-4">Idiomas</h2>
-                <div class="w-24 h-1 bg-blue-600 mx-auto"></div>
-            </div>
-            <div class="grid md:grid-cols-2 gap-8 max-w-2xl mx-auto">
-                <div class="bg-gray-50 dark:bg-gray-800 p-8 rounded-xl text-center">
-                    <i class="fas fa-flag text-4xl text-red-600 mb-4"></i>
-                    <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Español</h3>
-                    <p class="text-gray-600 dark:text-gray-300">Nativo</p>
-                </div>
-                <div class="bg-gray-50 dark:bg-gray-800 p-8 rounded-xl text-center">
-                    <i class="fas fa-flag text-4xl text-blue-600 mb-4"></i>
-                    <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Inglés</h3>
-                    <p class="text-gray-600 dark:text-gray-300">Avanzado (C2 EF SET)</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contacto Section -->
-    <section id="contacto" class="py-20 bg-gray-50 dark:bg-gray-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-4">Contacto</h2>
-                <div class="w-24 h-1 bg-blue-600 mx-auto mb-8"></div>
-                <p class="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-                    ¿Tienes un proyecto en mente o quieres colaborar? ¡Me encantaría escuchar de ti!
+        <!-- Footer -->
+        <footer class="mt-16 py-8 border-t border-gray-200 dark:border-gray-700">
+            <div class="text-center text-gray-600 dark:text-gray-400">
+                <p class="mb-4">
+                    Last updated: August 2025
+                </p>
+                <p class="text-sm">
+                    &copy; 2025 Carlos Alberto Granados Ybarra. 
+                    Design inspired by professional academic pages.
                 </p>
             </div>
-            <div class="grid md:grid-cols-3 gap-8 mb-16">
-                <div class="text-center">
-                    <div class="bg-blue-100 dark:bg-blue-900 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i class="fas fa-envelope text-2xl text-blue-600 dark:text-blue-400"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Email</h3>
-                    <a href="mailto:carlos.granados@pucp.edu.pe" class="text-blue-600 dark:text-blue-400 hover:underline">
-                        carlos.granados@pucp.edu.pe
-                    </a>
-                </div>
-                <div class="text-center">
-                    <div class="bg-green-100 dark:bg-green-900 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i class="fas fa-phone text-2xl text-green-600 dark:text-green-400"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Teléfono</h3>
-                    <a href="tel:+51973829504" class="text-green-600 dark:text-green-400 hover:underline">
-                        (+51) 973829504
-                    </a>
-                </div>
-                <div class="text-center">
-                    <div class="bg-purple-100 dark:bg-purple-900 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i class="fab fa-linkedin text-2xl text-purple-600 dark:text-purple-400"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">LinkedIn</h3>
-                    <a href="#" class="text-purple-600 dark:text-purple-400 hover:underline">
-                        linkedin.com/in/carlos-granados
-                    </a>
-                </div>
-            </div>
-            <div class="flex justify-center space-x-6">
-                <a href="#" class="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
-                    <i class="fas fa-graduation-cap text-2xl"></i>
-                </a>
-                <a href="#" class="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
-                    <i class="fab fa-orcid text-2xl"></i>
-                </a>
-                <a href="#" class="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
-                    <i class="fab fa-github text-2xl"></i>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-gray-900 dark:bg-black text-white py-12">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center">
-                <h3 class="text-2xl font-bold mb-4">Carlos Alberto Granados Ybarra</h3>
-                <p class="text-gray-400 mb-6">Ingeniero Electrónico · Especialista en IA y Cloud</p>
-                <div class="flex justify-center space-x-6 mb-8">
-                    <a href="mailto:carlos.granados@pucp.edu.pe" class="text-gray-400 hover:text-white transition-colors">
-                        <i class="fas fa-envelope text-xl"></i>
-                    </a>
-                    <a href="#" class="text-gray-400 hover:text-white transition-colors">
-                        <i class="fab fa-linkedin text-xl"></i>
-                    </a>
-                    <a href="#" class="text-gray-400 hover:text-white transition-colors">
-                        <i class="fas fa-graduation-cap text-xl"></i>
-                    </a>
-                    <a href="#" class="text-gray-400 hover:text-white transition-colors">
-                        <i class="fab fa-orcid text-xl"></i>
-                    </a>
-                    <a href="#" class="text-gray-400 hover:text-white transition-colors">
-                        <i class="fab fa-github text-xl"></i>
-                    </a>
-                </div>
-                <div class="border-t border-gray-800 pt-8">
-                    <p class="text-gray-400">&copy; 2024 Carlos Alberto Granados Ybarra. Todos los derechos reservados.</p>
-                </div>
-            </div>
-        </div>
-    </footer>
+        </footer>
+    </div>
 
     <script src="script.js"></script>
 </body>

@@ -1,102 +1,148 @@
-// Dark Mode Toggle
-const themeToggle = document.getElementById('theme-toggle');
-const html = document.documentElement;
+// Academic Website JavaScript
+// Clean, professional interactions for academic layout
 
-// Check for saved theme preference or default to light mode
-const savedTheme = localStorage.getItem('theme') || 'light';
-html.classList.toggle('dark', savedTheme === 'dark');
-
-themeToggle.addEventListener('click', () => {
-    html.classList.toggle('dark');
-    const isDark = html.classList.contains('dark');
-    localStorage.setItem('theme', isDark ? 'dark' : 'light');
-});
-
-// Mobile Menu Toggle
-const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
-const mobileMenu = document.getElementById('mobile-menu');
-
-mobileMenuToggle.addEventListener('click', () => {
-    mobileMenu.classList.toggle('hidden');
-});
-
-// Smooth Scrolling for Navigation Links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            const offsetTop = target.offsetTop - 70; // Account for fixed header
-            window.scrollTo({
-                top: offsetTop,
-                behavior: 'smooth'
-            });
-            
-            // Close mobile menu if open
-            mobileMenu.classList.add('hidden');
-        }
-    });
-});
-
-// Header Scroll Effect
-const header = document.querySelector('nav');
-let lastScrollY = window.scrollY;
-
-window.addEventListener('scroll', () => {
-    const currentScrollY = window.scrollY;
+document.addEventListener('DOMContentLoaded', function() {
+    // Theme toggle functionality
+    const themeToggle = document.getElementById('theme-toggle');
+    const html = document.documentElement;
     
-    if (currentScrollY > 100) {
-        header.classList.add('shadow-lg');
+    // Check for saved theme preference
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) {
+        html.classList.toggle('dark', savedTheme === 'dark');
     } else {
-        header.classList.remove('shadow-lg');
+        // Default to system preference
+        if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            html.classList.add('dark');
+        }
     }
     
-    lastScrollY = currentScrollY;
-});
-
-// Intersection Observer for Animation on Scroll
-const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
-};
-
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('animate-slide-up');
-        }
-    });
-}, observerOptions);
-
-// Observe elements for animation
-document.querySelectorAll('section > div').forEach(el => {
-    observer.observe(el);
-});
-
-// Active Navigation Link Highlight
-const sections = document.querySelectorAll('section[id]');
-const navLinks = document.querySelectorAll('nav a[href^="#"]');
-
-window.addEventListener('scroll', () => {
-    const scrollPosition = window.scrollY + 100;
+    // Theme toggle event
+    if (themeToggle) {
+        themeToggle.addEventListener('click', function() {
+            html.classList.toggle('dark');
+            const isDark = html.classList.contains('dark');
+            localStorage.setItem('theme', isDark ? 'dark' : 'light');
+        });
+    }
     
-    sections.forEach(section => {
-        const sectionTop = section.offsetTop;
-        const sectionHeight = section.offsetHeight;
-        const sectionId = section.getAttribute('id');
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+    
+    // Research items hover effects
+    const researchItems = document.querySelectorAll('.research-item');
+    researchItems.forEach(item => {
+        item.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-2px)';
+            this.style.transition = 'transform 0.2s ease';
+        });
         
-        if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
-            navLinks.forEach(link => {
-                link.classList.remove('text-blue-600', 'dark:text-blue-400');
-                link.classList.add('text-gray-700', 'dark:text-gray-300');
-                
-                if (link.getAttribute('href') === `#${sectionId}`) {
-                    link.classList.remove('text-gray-700', 'dark:text-gray-300');
-                    link.classList.add('text-blue-600', 'dark:text-blue-400');
-                }
-            });
+        item.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0)';
+        });
+    });
+    
+    // Add fade-in animation on scroll for better UX
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+    
+    const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+            }
+        });
+    }, observerOptions);
+    
+    // Apply fade-in to sections
+    document.querySelectorAll('section').forEach(section => {
+        section.style.opacity = '0';
+        section.style.transform = 'translateY(20px)';
+        section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        observer.observe(section);
+    });
+    
+    // Professional contact button
+    window.downloadCV = function() {
+        // You can replace this with actual CV download link
+        alert('Para solicitar mi CV, por favor contactar a: carlos.granados@pucp.edu.pe');
+    };
+    
+    // Print-friendly adjustments
+    window.addEventListener('beforeprint', function() {
+        document.body.classList.add('print-mode');
+    });
+    
+    window.addEventListener('afterprint', function() {
+        document.body.classList.remove('print-mode');
+    });
+    
+    // Academic-style copy to clipboard for citations
+    window.copyBibTeX = function(publicationTitle) {
+        const bibtex = `@inproceedings{granados2024${publicationTitle.toLowerCase().replace(/\s+/g, '')},
+    title={${publicationTitle}},
+    author={Granados, Carlos Alberto and others},
+    booktitle={Conference Proceedings},
+    year={2024},
+    organization={Publisher}
+}`;
+        
+        navigator.clipboard.writeText(bibtex).then(function() {
+            showNotification('BibTeX copiado al portapapeles');
+        });
+    };
+    
+    // Utility function for notifications
+    function showNotification(message) {
+        const notification = document.createElement('div');
+        notification.textContent = message;
+        notification.className = 'fixed top-4 left-1/2 transform -translate-x-1/2 bg-green-500 text-white px-4 py-2 rounded-lg z-50 transition-opacity';
+        document.body.appendChild(notification);
+        
+        setTimeout(() => {
+            notification.style.opacity = '0';
+            setTimeout(() => notification.remove(), 300);
+        }, 2000);
+    }
+    
+    // Keyboard navigation support
+    document.addEventListener('keydown', function(e) {
+        // Alt + T for theme toggle
+        if (e.altKey && e.key === 't') {
+            e.preventDefault();
+            if (themeToggle) {
+                themeToggle.click();
+            }
         }
     });
+    
+    // Add academic-style scroll progress indicator
+    const progressBar = document.createElement('div');
+    progressBar.className = 'fixed top-0 left-0 h-1 bg-blue-600 z-50 transition-all duration-300';
+    progressBar.style.width = '0%';
+    document.body.appendChild(progressBar);
+    
+    window.addEventListener('scroll', function() {
+        const windowHeight = document.documentElement.scrollHeight - window.innerHeight;
+        const scrolled = (window.scrollY / windowHeight) * 100;
+        progressBar.style.width = scrolled + '%';
+    });
+    
+    console.log('Academic website loaded successfully');
 });
 
 // Download CV Function

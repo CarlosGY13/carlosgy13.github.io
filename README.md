@@ -1,33 +1,101 @@
-# Carlos Alberto Granados Ybarra - Portafolio Personal
+# Carlos Alberto Granados Ybarra - Academic Website
 
-Este es mi sitio web personal profesional, diseñado para mostrar mi experiencia, educación, publicaciones y habilidades como Ingeniero Electrónico especializado en Inteligencia Artificial, Cloud e Interacción Humano-Robot.
+Professional academic personal website, oriented towards research and scientific projects. Serious design inspired by recognized academic researchers' pages.
 
-## 🚀 Características
+## 🎯 Features
 
-- **Diseño Moderno y Responsive**: Utiliza TailwindCSS para un diseño limpio y moderno
-- **Dark/Light Mode**: Cambio de tema con persistencia en localStorage
-- **Animaciones Suaves**: Transiciones y efectos visuales atractivos
-- **Navegación Fluida**: Smooth scrolling y navegación fija
-- **Optimizado para GitHub Pages**: Listo para desplegar en GitHub Pages
-- **SEO Friendly**: Metadatos optimizados para motores de búsqueda
+- **Serious and professional academic design** - Inspired by academic researchers' pages
+- **Responsive design** - Optimized for all devices
+- **Dark/light mode** - Dynamic toggle with saved preferences
+- **Research-focused** - Highlighted sections for publications and projects
+- **Optimized performance** - Fast loading and smooth experience
+- **Accessible** - Keyboard navigation and inclusive design
 
-## 🛠️ Tecnologías Utilizadas
+## 🛠 Technologies
 
-- **HTML5**: Estructura semántica
-- **TailwindCSS**: Framework CSS utility-first
-- **JavaScript Vanilla**: Funcionalidad interactiva
-- **FontAwesome**: Iconografía
-- **Google Fonts**: Tipografía (Inter)
+- **HTML5** - Semantic and modern structure
+- **TailwindCSS** - Utility-first CSS framework via CDN
+- **JavaScript ES6+** - Modern interactivity and clean code
+- **FontAwesome** - Professional iconography
+- **Google Fonts** - Inter typography for academic readability
 
-## 📱 Secciones
+## 📚 Included Sections
 
-1. **Hero/Inicio**: Introducción personal con información de contacto
-2. **Educación**: Formación académica (PUCP, Oracle Next Education, COAR Lima)
-3. **Experiencia Laboral**: Posiciones actuales y anteriores
-4. **Publicaciones**: Trabajos de investigación en HRI y AI
-5. **Certificaciones**: Certificaciones profesionales en tecnología
-6. **Habilidades**: Competencias técnicas organizadas por categorías
-7. **Premios y Logros**: Reconocimientos académicos y profesionales
+1. **Header** - Personal information, photo, academic contact links
+2. **Research** - Projects and publications with highlighted awards (AllyBot, Yachabot, PlantiBot, Cogui)
+3. **Education** - Academic degrees and certifications (PUCP, Oracle, COAR Lima)
+4. **Awards** - Academic recognition (Best Narrative Award TEI 2024, Honorable Mention RO-MAN 2023)
+5. **Technical Skills** - Skills organized by categories (Languages, Cloud, AI, Robotics)
+6. **Teaching** - University teaching experience
+7. **Professional Activities** - Relevant jobs and collaborations
+8. **Additional Information** - Languages and complementary certifications
+
+## 🌟 Functionalities
+
+- **Dark/Light Mode**: Persistent theme toggle
+- **Mobile Navigation**: Hamburger menu for mobile devices
+- **Scroll Animations**: Elements appear when scrolling
+- **Download CV**: Functionality to download curriculum
+- **Contact Form**: Message sending simulation
+- **Back to Top Button**: Quick navigation to start
+- **Parallax Effects**: Visual effects in hero section
+
+## 📂 Project Structure
+
+```
+carlosgranados.github.io/
+├── index.html          # Main page
+├── script.js           # JavaScript for functionality
+├── styles.css          # Legacy CSS file (no longer used)
+├── README.md           # This file
+└── .gitignore         # Files ignored by Git
+```
+
+## 🚀 Deployment
+
+This site is configured to deploy automatically on GitHub Pages:
+
+1. Push changes to the repository
+2. Go to Settings > Pages on GitHub
+3. Select the `main` branch as source
+4. The site will be available at `https://carlosgy13.github.io/`
+
+## 📧 Contact
+
+- **Email**: carlos.granados@pucp.edu.pe
+- **Phone**: (+51) 973829504
+- **LinkedIn**: [Add link]
+- **Google Scholar**: [Add link]
+- **ORCID**: [Add link]
+
+## 📄 License
+
+© 2025 Carlos Alberto Granados Ybarra. All rights reserved.
+
+---
+
+⭐ If you like this project, give it a star on GitHub!
+- **Performance optimizado** - Carga rápida y experiencia fluida
+- **Accesible** - Navegación por teclado y diseño inclusivo
+
+## � Tecnologías
+
+- **HTML5** - Estructura semántica y moderna
+- **TailwindCSS** - Framework CSS utility-first via CDN
+- **JavaScript ES6+** - Interactividad moderna y clean code
+- **FontAwesome** - Iconografía profesional
+- **Google Fonts** - Tipografía Inter para legibilidad académica
+
+## � Secciones Incluidas
+
+1. **Header** - Información personal, foto, enlaces de contacto académico
+2. **Investigación** - Proyectos y publicaciones con premios destacados (AllyBot, Yachabot, PlantiBot, Cogui)
+3. **Educación** - Títulos académicos y certificaciones (PUCP, Oracle, COAR Lima)
+4. **Premios** - Reconocimientos académicos (Best Narrative Award TEI 2024, Honorable Mention RO-MAN 2023)
+5. **Competencias Técnicas** - Habilidades organizadas por categorías (Lenguajes, Cloud, IA, Robótica)
+6. **Docencia** - Experiencia en enseñanza universitaria
+7. **Actividades Profesionales** - Trabajos y colaboraciones relevantes
+8. **Información Adicional** - Idiomas y certificaciones complementarias
 8. **Idiomas**: Competencias lingüísticas
 9. **Contacto**: Información de contacto y enlaces profesionales
 
