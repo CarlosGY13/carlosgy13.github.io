@@ -78,9 +78,42 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Professional contact button
     window.downloadCV = function() {
-        // You can replace this with actual CV download link
-        alert('Para solicitar mi CV, por favor contactar a: carlos.granados@pucp.edu.pe');
+        // Open CV PDF in new window for viewing
+        window.open('documents/CV_Carlos_Granados.pdf', '_blank');
     };
+    
+    // Project filtering functionality
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const projectItems = document.querySelectorAll('.project-item');
+    
+    if (filterButtons.length > 0) {
+        filterButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                const filter = this.getAttribute('data-filter');
+                
+                // Update button states
+                filterButtons.forEach(btn => btn.classList.remove('active', 'bg-blue-100', 'dark:bg-blue-900', 'text-blue-800', 'dark:text-blue-200'));
+                filterButtons.forEach(btn => btn.classList.add('bg-gray-100', 'dark:bg-gray-700', 'text-gray-800', 'dark:text-gray-200'));
+                
+                this.classList.remove('bg-gray-100', 'dark:bg-gray-700', 'text-gray-800', 'dark:text-gray-200');
+                this.classList.add('active', 'bg-blue-100', 'dark:bg-blue-900', 'text-blue-800', 'dark:text-blue-200');
+                
+                // Filter projects
+                projectItems.forEach(item => {
+                    if (filter === 'all') {
+                        item.style.display = 'block';
+                    } else {
+                        const itemSkills = item.getAttribute('data-skills');
+                        if (itemSkills && itemSkills.includes(filter)) {
+                            item.style.display = 'block';
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    }
+                });
+            });
+        });
+    }
     
     // Print-friendly adjustments
     window.addEventListener('beforeprint', function() {
