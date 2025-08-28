@@ -122,120 +122,76 @@
                 <p class="text-sm text-gray-600 dark:text-gray-400 mb-3">Filter by technologies:</p>
                 <div class="flex flex-wrap gap-2">
                     <button class="filter-btn active px-3 py-1 rounded-full text-sm bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 hover:bg-blue-200 dark:hover:bg-blue-800 transition-colors" data-filter="all">All</button>
-                    <button class="filter-btn px-3 py-1 rounded-full text-sm bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors" data-filter="ai">AI/ML</button>
-                    <button class="filter-btn px-3 py-1 rounded-full text-sm bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors" data-filter="robotics">Robotics</button>
+                    <button class="filter-btn px-3 py-1 rounded-full text-sm bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors" data-filter="ai-ml">AI/ML</button>
                     <button class="filter-btn px-3 py-1 rounded-full text-sm bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors" data-filter="hri">HRI</button>
+                    <button class="filter-btn px-3 py-1 rounded-full text-sm bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors" data-filter="cloud">Cloud</button>
                     <button class="filter-btn px-3 py-1 rounded-full text-sm bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors" data-filter="iot">IoT</button>
-                    <button class="filter-btn px-3 py-1 rounded-full text-sm bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors" data-filter="nlp">NLP</button>
+                    <button class="filter-btn px-3 py-1 rounded-full text-sm bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors" data-filter="llm">LLM</button>
                 </div>
             </div>
             
             <div class="space-y-6">
                 <!-- AllyBot -->
-                <div class="project-item critical-project pl-6 py-6 bg-white dark:bg-gray-800 rounded-lg shadow-sm hover:shadow-md transition-all">
+                <div class="project-item critical-project pl-6 py-6 bg-white dark:bg-gray-800 rounded-lg shadow-sm hover:shadow-md transition-all" data-skills="hri,ai-ml,llm">
                     <div class="flex items-start gap-6">
-                        <div class="w-32 h-32 bg-gradient-to-br from-red-100 to-red-200 dark:from-red-800 dark:to-red-900 rounded-lg flex items-center justify-center flex-shrink-0">
-                            <i class="fas fa-robot text-3xl text-red-600 dark:text-red-400"></i>
+                        <!-- Project Image -->
+                        <div class="w-32 h-32 flex-shrink-0">
+                            <!-- Replace 'images/allybot.jpg' with your actual image path -->
+                            <img src="images/allybot.jpg" alt="AllyBot Project" class="w-full h-full object-cover rounded-lg" 
+                                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                            <!-- Fallback icon if image doesn't load -->
+                            <div class="w-full h-full bg-gradient-to-br from-red-100 to-red-200 dark:from-red-800 dark:to-red-900 rounded-lg flex items-center justify-center" style="display: none;">
+                                <i class="fas fa-robot text-3xl text-red-600 dark:text-red-400"></i>
+                            </div>
                         </div>
                         <div class="flex-1">
-                            <h3 class="text-2xl font-semibold mb-3">
-                                <a href="#" class="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300">
-                                    AllyBot: Robotic Assistance System for Human-Robot Interaction
-                                </a>
+                            <h3 class="text-2xl font-semibold mb-3 text-gray-900 dark:text-white">
+                                AllyBot: Robotic Assistance System for Inclusive Human-Robot Interaction
                             </h3>
                             <p class="text-gray-600 dark:text-gray-400 mb-3">
-                                <span class="bg-yellow-100 dark:bg-yellow-900 text-yellow-800 dark:text-yellow-200 px-2 py-1 rounded text-sm font-medium">Best Narrative Award - TEI 2024</span>
+                                <span class="bg-yellow-100 dark:bg-yellow-900 text-yellow-800 dark:text-yellow-200 px-2 py-1 rounded text-sm font-medium">🏆 Best Narrative Award - TEI 2024, Ireland</span>
                             </p>
                             <p class="text-gray-700 dark:text-gray-300 mb-4 leading-relaxed">
-                                Developed an interactive robotic system that uses natural language processing and computer vision to provide personalized assistance in educational environments. The system adapts to individual user needs and learning patterns, creating more engaging and effective educational experiences.
-                            </p>
+Designed and implemented an educational social robot aimed at empowering early adolescent girls in Peru through STEAM learning. AllyBot integrates natural language processing, and interactive feedback mechanisms to foster self-esteem, creativity, and collaborative learning. The robot features customizable components, motivational audio cues, and a touchscreen interface, aligning with Peru’s national curriculum and promoting gender equity in technology and art education                            </p>
+                            
+                            <!-- Associated Papers -->
+                            <div class="mb-4">
+                                <h4 class="text-sm font-semibold text-gray-900 dark:text-white mb-2">📄 Associated Publications:</h4>
+                                <div class="space-y-2 text-sm">
+                                    <div class="flex items-start gap-2">
+                                        <i class="fas fa-external-link-alt text-blue-500 mt-1 text-xs"></i>
+                                        <a href="https://dl.acm.org/doi/10.1145/3610978.3641111" target="_blank" class="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 hover:underline">
+                                            Allybot: An Edutainment Robot to Improve Girls Participation in STEAM (HRI'24)
+
+                                        </a>
+                                    </div>
+                                    <div class="flex items-start gap-2">
+                                        <i class="fas fa-external-link-alt text-blue-500 mt-1 text-xs"></i>
+                                        <a href="https://dl.acm.org/doi/10.1145/3610978.3640563" target="_blank" class="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 hover:underline">
+                                            Allybot: Design Studio to Enhance Girls' Participation in Technology and Art (HRI'24)
+                                        </a>
+                                    </div>
+                                    <div class="flex items-start gap-2">
+                                        <i class="fas fa-external-link-alt text-blue-500 mt-1 text-xs"></i>
+                                        <a href="https://dl.acm.org/doi/10.1145/3623509.3635863" target="_blank" class="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 hover:underline">
+                                            AllyBot: Empowering Girls Participation in STEAM (TEI'24)
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            
                             <div class="flex flex-wrap gap-2">
                                 <span class="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-3 py-1 rounded-full text-sm">Python</span>
-                                <span class="bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 px-3 py-1 rounded-full text-sm">ROS</span>
-                                <span class="bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 px-3 py-1 rounded-full text-sm">Computer Vision</span>
-                                <span class="bg-orange-100 dark:bg-orange-900 text-orange-800 dark:text-orange-200 px-3 py-1 rounded-full text-sm">NLP</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Yachabot -->
-                <div class="project-item pl-6 py-6 bg-white dark:bg-gray-800 rounded-lg shadow-sm hover:shadow-md transition-all">
-                    <div class="flex items-start gap-6">
-                        <div class="w-32 h-32 bg-gradient-to-br from-blue-100 to-blue-200 dark:from-blue-800 dark:to-blue-900 rounded-lg flex items-center justify-center flex-shrink-0">
-                            <i class="fas fa-brain text-3xl text-blue-600 dark:text-blue-400"></i>
-                        </div>
-                        <div class="flex-1">
-                            <h3 class="text-2xl font-semibold mb-3">
-                                <a href="#" class="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300">
-                                    Yachabot: Educational Robot with Conversational AI
-                                </a>
-                            </h3>
-                            <p class="text-gray-700 dark:text-gray-300 mb-4 leading-relaxed">
-                                Educational robot that employs conversational AI to adapt to individual student learning styles. The system provides personalized tutoring experiences and helps students develop critical thinking skills through interactive dialogue.
-                            </p>
-                            <div class="flex flex-wrap gap-2">
-                                <span class="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-3 py-1 rounded-full text-sm">Python</span>
-                                <span class="bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 px-3 py-1 rounded-full text-sm">Machine Learning</span>
-                                <span class="bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 px-3 py-1 rounded-full text-sm">Conversational AI</span>
-                                <span class="bg-red-100 dark:bg-red-900 text-red-800 dark:text-red-200 px-3 py-1 rounded-full text-sm">Educational Technology</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- PlantiBot -->
-                <div class="project-item pl-6 py-6 bg-white dark:bg-gray-800 rounded-lg shadow-sm hover:shadow-md transition-all">
-                    <div class="flex items-start gap-6">
-                        <div class="w-32 h-32 bg-gradient-to-br from-green-100 to-green-200 dark:from-green-800 dark:to-green-900 rounded-lg flex items-center justify-center flex-shrink-0">
-                            <i class="fas fa-seedling text-3xl text-green-600 dark:text-green-400"></i>
-                        </div>
-                        <div class="flex-1">
-                            <h3 class="text-2xl font-semibold mb-3">
-                                <a href="https://dl.acm.org/doi/10.1145/3689050.3705996" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300">
-                                    PlantiBot: Towards the Design of a Robotic Plant for Mental Health Care
-                                </a>
-                            </h3>
-                            <p class="text-gray-700 dark:text-gray-300 mb-4 leading-relaxed">
-                                This study presents a robotic plant system that uses biomimicry and IoRT to offer therapeutic plant care experiences for university students, promoting mental well-being and awareness of native Peruvian flora in small living spaces.
-                            </p>
-                            <div class="flex flex-wrap gap-2">
-                                <span class="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-3 py-1 rounded-full text-sm">IoT</span>
-                                <span class="bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 px-3 py-1 rounded-full text-sm">Robotics</span>
-                                <span class="bg-yellow-100 dark:bg-yellow-900 text-yellow-800 dark:text-yellow-200 px-3 py-1 rounded-full text-sm">Agriculture</span>
-                                <span class="bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 px-3 py-1 rounded-full text-sm">Data Analytics</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Cogui -->
-                <div class="project-item pl-6 py-6 bg-white dark:bg-gray-800 rounded-lg shadow-sm hover:shadow-md transition-all">
-                    <div class="flex items-start gap-6">
-                        <div class="w-32 h-32 bg-gradient-to-br from-purple-100 to-purple-200 dark:from-purple-800 dark:to-purple-900 rounded-lg flex items-center justify-center flex-shrink-0">
-                            <i class="fas fa-comments text-3xl text-purple-600 dark:text-purple-400"></i>
-                        </div>
-                        <div class="flex-1">
-                            <h3 class="text-2xl font-semibold mb-3">
-                                <a href="#" class="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300">
-                                    Cogui: Cognitive Assistant for Multimodal Interaction
-                                </a>
-                            </h3>
-                            <p class="text-gray-600 dark:text-gray-400 mb-3">
-                                <span class="bg-orange-100 dark:bg-orange-900 text-orange-800 dark:text-orange-200 px-2 py-1 rounded text-sm font-medium">Honorable Mention - RO-MAN 2023</span>
-                            </p>
-                            <p class="text-gray-700 dark:text-gray-300 mb-4 leading-relaxed">
-                                Multimodal communication interface that enables natural interactions between humans and robots through voice, gestures, and facial expressions. The system creates more intuitive and accessible human-robot collaboration experiences.
-                            </p>
-                            <div class="flex flex-wrap gap-2">
-                                <span class="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-3 py-1 rounded-full text-sm">Computer Vision</span>
-                                <span class="bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 px-3 py-1 rounded-full text-sm">Speech Recognition</span>
-                                <span class="bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 px-3 py-1 rounded-full text-sm">Gesture Recognition</span>
+                                <span class="bg-orange-100 dark:bg-orange-900 text-orange-800 dark:text-orange-200 px-3 py-1 rounded-full text-sm">LLM</span>
                                 <span class="bg-red-100 dark:bg-red-900 text-red-800 dark:text-red-200 px-3 py-1 rounded-full text-sm">HRI</span>
                             </div>
                         </div>
                     </div>
                 </div>
+
+                <!-- PROYECTOS YACHABOT, PLANTIBOT Y COGUI REMOVIDOS TEMPORALMENTE -->
+                <!-- Para restaurar estos proyectos, descomenta las secciones correspondientes -->
+
             </div>
         </section>
 
